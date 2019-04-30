@@ -18,8 +18,10 @@ class Controller extends BaseController
       $settings = Setting::where('status','=',1)->pluck('value','field_name');
     //  die();
     }
-    public function p($data = array()){
+    public function p($data = array(),$die=0){
         echo '<pre>'; print_r($data); echo '</pre>';
+        if($die==1)
+          die();
     }
 
 }

@@ -20,7 +20,7 @@ Route::get('/generatepassword',function(){
     echo Hash::make($_REQUEST['newpassword']); die();
   }
 
-}); 
+});
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -50,6 +50,7 @@ Route::post('/storenewLatestnews','LatestNewsController@store')->name('storenewL
 Route::get('/editLatestnews/{id}','LatestNewsController@edit')->name('editLatestnews');
 Route::post('/updateLatestnews','LatestNewsController@update')->name('updateLatestnews');
 /* Latest News Ends */
+Route::get('single/{id}','PostController@single')->name('single');
 
 /* Banner Begin */
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\News;
 
 class MainWebsiteController extends Controller
 {
@@ -13,7 +14,16 @@ class MainWebsiteController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $latestNews = News::wherestatus('1')->latest()->get();
+        //$latestNews = $latestNews->toArray();
+        $collection = collect($latestNews);
+        //echo $collection->count();
+        $smallNews = $collection->all();
+        $mainNews =  $collection->shift();
+        //echo $mainNews->count();
+      //  $this->p($mainNews,0);
+        //$this->p($smallNews,'1');
+        return view('welcome')->with('mainNews',$mainNews)->with('smallNews',$smallNews);
     }
 
     /**

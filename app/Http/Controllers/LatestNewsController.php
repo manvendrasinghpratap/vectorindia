@@ -129,7 +129,7 @@ class LatestNewsController extends Controller
 
         if(isset($cover) && !empty($cover))
     		    $newDetails->imagename  =   $imagename->getFilename().'.'.$extension;
-        
+
         $newDetails->save();
         $request->session()->flash('alert-success', trans('message.newsupdatesuccess'));
             return redirect('latestnews');

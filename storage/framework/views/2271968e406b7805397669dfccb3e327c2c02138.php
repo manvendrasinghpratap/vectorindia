@@ -52,7 +52,7 @@
             <!-- App Offer box begin -->
             <?php echo $__env->make('common.app_offer_box', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <!-- Latest News begin -->
-            <?php echo $__env->make('common.latest_news', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->yieldContent('latest_new_section'); ?>
             <!-- App Brands begin -->
             <?php echo $__env->make('common.app_brands', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <!-- Main map wrapper begin -->

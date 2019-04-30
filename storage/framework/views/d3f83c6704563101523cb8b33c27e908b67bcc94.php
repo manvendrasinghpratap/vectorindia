@@ -34,28 +34,32 @@
                                  <th width="5%"><?php echo e(trans('message.action')); ?></th>
                               </tr>
                               <tbody>
-                              <?php $__currentLoopData = $addresses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <tr id="hide_<?php echo e($row->id); ?>">
-                                    <td><p> <?php echo  nl2br(e($row->address)); ?></td>
-                                    <td><?php echo e(@$row->email); ?></td>
-                                    <td><?php echo e(@$row->mobile); ?></td>
-                                    <td><?php echo e(@$row->phoneno); ?></td>
-                                    <td><?php echo e(wordwrap($row->googlemapsrc, 50, "\n", 15)); ?></td>
-                                    <td>
-                                       <a class="btn btn-default btn-xs edit" href="<?php echo e(URL::to('editaddress',[encodeParam($row->id) ])); ?>" title="Edit Address"> <i class="fa fa-edit"></i></a>
-                                       <button type="button" class="btn btn-default btn-xs confirmDelete" data-siteurl ="<?php echo e(url('/')); ?>" data-tablename="skills" data-record-id="<?php echo e($row->id); ?>" data-record-title="Are you sure you want to delete this Main Skill ?" data-toggle="modal" data-target="modal-confirm" data-succuss="Main Skill deleted successfully">
-                                          <i class="fa fa-trash-o "></i></button>
-                                    </td>
-                                 </tr>
-                              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              <?php if($addresses->count()>0): ?>
+                                 <?php $__currentLoopData = $addresses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                 <tr id="hide_<?php echo e($row->id); ?>">
+                                       <td><p> <?php echo  nl2br(e($row->address)); ?></td>
+                                       <td><?php echo e(@$row->email); ?></td>
+                                       <td><?php echo e(@$row->mobile); ?></td>
+                                       <td><?php echo e(@$row->phoneno); ?></td>
+                                       <td><?php echo e(wordwrap($row->googlemapsrc, 50, "\n", 15)); ?></td>
+                                       <td>
+                                          <a class="btn btn-default btn-xs edit" href="<?php echo e(URL::to('editaddress',[encodeParam($row->id) ])); ?>" title="Edit Address"> <i class="fa fa-edit"></i></a>
+                                          <button type="button" class="btn btn-default btn-xs confirmDelete" data-siteurl ="<?php echo e(url('/')); ?>" data-tablename="skills" data-record-id="<?php echo e($row->id); ?>" data-record-title="Are you sure you want to delete this Main Skill ?" data-toggle="modal" data-target="modal-confirm" data-succuss="Main Skill deleted successfully">
+                                             <i class="fa fa-trash-o "></i></button>
+                                       </td>
+                                    </tr>
+                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              <?php endif; ?>
                               </tbody>
                               </thead>
                            </table>
                         </div>
                         </div>
                         <div style="float:right;">
+                        <?php if($addresses->count()>0): ?>
                            <?php echo e($addresses->links()); ?>
 
+                        <?php endif; ?>
                         </div>
                      </div>
                   </div>
