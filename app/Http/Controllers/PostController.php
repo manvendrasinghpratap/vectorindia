@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\News;
 
-class MainWebsiteController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,26 +13,9 @@ class MainWebsiteController extends Controller
      */
     public function index()
     {
-        $latestNews = News::wherestatus('1')->latest()->limit(4)->get();
-        //$latestNews = $latestNews->toArray();
-        $collection = collect($latestNews);
-        //echo $collection->count();
-        $mainNews =  $collection->shift();
-        $smallNews = $collection->all();
-        //echo $mainNews->count();
-      //  $this->p($mainNews,0);
-      //echo count($smallNews);
-        //$this->p($mainNews->imagename,'1');
-        return view('frontend.welcome')->with('mainNews',$mainNews)->with('smallNews',$smallNews);
+        //
     }
 
-    public function single($newsId)
-    {
-      //echo $newsId;
-      $newsDetails = News::find($newsId);
-      //$this->p($postDetails,1);
-      return view('frontend.newdetail')->with('newsDetails',$newsDetails);
-    }
     /**
      * Show the form for creating a new resource.
      *

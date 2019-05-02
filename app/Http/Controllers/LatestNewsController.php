@@ -26,7 +26,6 @@ class LatestNewsController extends Controller
     public function index()
     {
         $latestNews = News::latest()->get();
-        //$this->p($latestNews,0);
         return view('admin.latestnews.index')
                                     ->with('page_title','Manage News')
                                     ->with('latestNews',$latestNews)
@@ -66,7 +65,8 @@ class LatestNewsController extends Controller
     	$newDetails = new News;
         $newDetails->heading            =   $request->heading;
         $newDetails->description        =   $request->description;
-        $newDetails->written_by          =   $request->written_by;
+        $newDetails->written_by         =   $request->written_by;
+        $newDetails->sub_heading        =   $request->sub_heading;
 
         if($request->file('imagename'))
     		    $newDetails->imagename  =   $imagename->getFilename().'.'.$extension;
@@ -126,6 +126,7 @@ class LatestNewsController extends Controller
         $newDetails->heading            =   $request->heading;
         $newDetails->description        =   $request->description;
         $newDetails->written_by         =   $request->written_by;
+        $newDetails->sub_heading        =   $request->sub_heading;
 
         if(isset($cover) && !empty($cover))
     		    $newDetails->imagename  =   $imagename->getFilename().'.'.$extension;

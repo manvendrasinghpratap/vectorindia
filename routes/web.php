@@ -50,7 +50,7 @@ Route::post('/storenewLatestnews','LatestNewsController@store')->name('storenewL
 Route::get('/editLatestnews/{id}','LatestNewsController@edit')->name('editLatestnews');
 Route::post('/updateLatestnews','LatestNewsController@update')->name('updateLatestnews');
 /* Latest News Ends */
-Route::get('single/{id}','PostController@single')->name('single');
+Route::get('single/{id}','MainWebsiteController@single')->name('single');
 
 /* Banner Begin */
 
@@ -63,7 +63,13 @@ Route::post('/updateBanner','BannerController@update')->name('updateBanner');
 
 /* Banner Ends */
 
-
+/* Testimonial Begin */
+Route::get('/testimonials','TestimonialController@index')->name('testimonials');
+Route::get('/addnewtestimonials','TestimonialController@create')->name('addnewtestimonials');
+Route::post('/storetestimonials','TestimonialController@store')->name('storetestimonials');
+Route::get('/edittestimonials/{id}','TestimonialController@edit')->name('edittestimonials');
+Route::post('/updatetestimonials','TestimonialController@update')->name('updatetestimonials');
+/* Testimonial Ends */
 
 
 

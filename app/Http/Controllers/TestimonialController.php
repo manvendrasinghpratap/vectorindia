@@ -3,45 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\News;
-
-class MainWebsiteController extends Controller
+use App\Http\Requests\LatestNewsRequest;
+use App\Testimonial;
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $latestNews = News::wherestatus('1')->latest()->limit(4)->get();
-        //$latestNews = $latestNews->toArray();
-        $collection = collect($latestNews);
-        //echo $collection->count();
-        $mainNews =  $collection->shift();
-        $smallNews = $collection->all();
-        //echo $mainNews->count();
-      //  $this->p($mainNews,0);
-      //echo count($smallNews);
-        //$this->p($mainNews->imagename,'1');
-        return view('frontend.welcome')->with('mainNews',$mainNews)->with('smallNews',$smallNews);
-    }
+     protected $breadcrumb = array('/testimonials'=>'Testimonials','/addnewtestimonials'=>'Add New Testimonial');
+     protected $listing = array('/addnewtestimonials'=>'Add New Testimonial');
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
 
-    public function single($newsId)
-    {
-      //echo $newsId;
-      $newsDetails = News::find($newsId);
-      //$this->p($postDetails,1);
-      return view('frontend.newdetail')->with('newsDetails',$newsDetails);
-    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+     public function index()
+     {
+         $testimonial = Testimonial::latest()->get();
+         return view('admin.testimonial.index')
+                                     ->with('page_title','Manage Testimonial')
+                                     ->with('testimonial',$testimonial)
+                                     ->with('listing',$this->listing)
+                                     ->with('breadcrumb',$this->breadcrumb);
+     }
+
     public function create()
     {
-        //
+      $breadcrumb = array();
+      return view('admin.testimonial.create')
+                  ->with('page_title','Add New Testimonial')
+                  ->with('breadcrumb',$this->breadcrumb)
+                  ->with('listing',$this->listing);
     }
 
     /**

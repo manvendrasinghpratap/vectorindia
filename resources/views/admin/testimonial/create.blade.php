@@ -6,9 +6,9 @@
   <div class="row">
 	 <div class="col-lg-12">
 					<div class="panel panel-blue">
-					   <div class="panel-heading">{{ trans('message.addnewnews')}} </div>
+					   <div class="panel-heading">{{ trans('message.addnewtestimonial')}} </div>
 					   <div class="panel-body pan">
-						  {{ Form::open(['method'=>'post','url'=>'storenewLatestnews','files'=>'true','class'=>'form-horizontal','role'=>'form'])}}
+						  {{ Form::open(['method'=>'post','url'=>'storetestimonials','files'=>'true','class'=>'form-horizontal','role'=>'form'])}}
 								 <div class="form-body pal">
 											<div class="form-group {{ $errors->has('heading') ? 'has-error' : '' }}">
 											<label for="heading" class="col-md-3 control-label">{{ trans('message.heading')}}<span class='require'>*</span></label>

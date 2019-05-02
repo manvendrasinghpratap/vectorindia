@@ -5,7 +5,7 @@
   <div class="row">
 	 <div class="col-lg-12">
 					<div class="panel panel-blue">
-					   <div class="panel-heading"><?php echo e(trans('message.addnewnews')); ?> </div>
+					   <div class="panel-heading"><?php echo e(trans('message.addnewtestimonial')); ?> </div>
 					   <div class="panel-body pan">
 						  <?php echo e(Form::open(['method'=>'post','url'=>'storenewLatestnews','files'=>'true','class'=>'form-horizontal','role'=>'form'])); ?>
 
@@ -83,4 +83,4 @@
                <!--END CONTENT-->
   <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.layouts.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\vectorindia\resources\views/admin/latestnews/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layouts.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\vectorindia\resources\views/admin/testimonial/create.blade.php ENDPATH**/ ?>
