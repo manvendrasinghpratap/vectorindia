@@ -52,7 +52,7 @@
             <!-- App Offer box begin -->
             @include('common.app_offer_box')
             <!-- Latest News begin -->
-            @yield('latest_new_section')
+            @include('common.latest_news')
             <!-- App Brands begin -->
             @include('common.app_brands')
             <!-- Main map wrapper begin -->

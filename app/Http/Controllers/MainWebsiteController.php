@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
-
+use App\Testimonial;
 class MainWebsiteController extends Controller
 {
     /**
@@ -15,24 +15,34 @@ class MainWebsiteController extends Controller
     public function index()
     {
         $latestNews = News::wherestatus('1')->latest()->limit(4)->get();
-        //$latestNews = $latestNews->toArray();
         $collection = collect($latestNews);
-        //echo $collection->count();
         $mainNews =  $collection->shift();
         $smallNews = $collection->all();
-        //echo $mainNews->count();
-      //  $this->p($mainNews,0);
-      //echo count($smallNews);
-        //$this->p($mainNews->imagename,'1');
-        return view('frontend.welcome')->with('mainNews',$mainNews)->with('smallNews',$smallNews);
+        /*Testimonail Begin*/
+        $testimonials   = Testimonial:: get();
+        /*Testimonail Begin*/
+        return view('frontend.welcome')->with('mainNews',$mainNews)
+                                        ->with('smallNews',$smallNews)
+                                        ->with('testimonials',$testimonials);    
     }
 
-    public function single($newsId)
+    public function single($posttype,$newsId)
     {
       //echo $newsId;
-      $newsDetails = News::find($newsId);
+        switch ($posttype) {
+            case 'news':
+                $singlePostDetails = News::find($newsId);
+                break;
+            case 'testimonial':
+                $singlePostDetails = Testimonial::find($newsId);
+                break;
+            default:
+                # code...
+                break;
+        }
       //$this->p($postDetails,1);
-      return view('frontend.newdetail')->with('newsDetails',$newsDetails);
+      return view('frontend.newdetail')->with('singlePostDetails',$singlePostDetails)
+                                        ->with('posttype',$posttype);
     }
     /**
      * Show the form for creating a new resource.

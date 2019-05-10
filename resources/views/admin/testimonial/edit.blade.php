@@ -13,23 +13,23 @@
 					<div class="panel panel-blue">
 					   <div class="panel-heading">{{trans('message.editnews')}}</div>
 					   <div class="panel-body pan">
-							 {{ Form::open(['method'=>'post','url'=>'updateLatestnews','files'=>'true','class'=>'form-horizontal','role'=>'form'])}}
-							 {{ Form::hidden('id', @$newsDetails['id'], array('name'=>'id')) }}
+							 {{ Form::open(['method'=>'post','url'=>'updatetestimonials','files'=>'true','class'=>'form-horizontal','role'=>'form'])}}
+							 {{ Form::hidden('id', @$testimonialDetails['id'], array('name'=>'id')) }}
 							 <div class="form-body pal">
 										<div class="form-group {{ $errors->has('heading') ? 'has-error' : '' }}">
 											<label for="heading" class="col-md-3 control-label">{{ trans('message.heading')}}<span class='require'>*</span></label>
 											<div class="col-md-9">
 											<div class="input-icon"><i class="fa fa-user"></i>
-											{{ Form::text('heading', $newsDetails['heading'], array('class' => 'form-control','placeholder'=> trans('message.heading'), 'rows'=>"4" ,'cols'=>"50")) }}
+											{{ Form::text('heading', $testimonialDetails['heading'], array('class' => 'form-control','placeholder'=> trans('message.heading'), 'rows'=>"4" ,'cols'=>"50")) }}
 											<span class="text-danger">{{ $errors->first('address') }}</span>
-											</div>
+											</div> 
 											</div>
 											</div>
 											<div class="form-group {{ $errors->has('sub_heading') ? 'has-error' : '' }}">
 											<label for="heading" class="col-md-3 control-label">{{ trans('message.sub_heading')}}<span class='require'>*</span></label>
 											<div class="col-md-9">
 											<div class="input-icon"><i class="fa fa-user"></i>
-											{{ Form::text('sub_heading', $newsDetails['sub_heading'], array('class' => 'form-control','placeholder'=> trans('message.sub_heading'), 'rows'=>"4" ,'cols'=>"50")) }}
+											{{ Form::text('sub_heading', $testimonialDetails['sub_heading'], array('class' => 'form-control','placeholder'=> trans('message.sub_heading'), 'rows'=>"4" ,'cols'=>"50")) }}
 											<span class="text-danger">{{ $errors->first('sub_heading') }}</span>
 											</div>
 											</div>
@@ -38,7 +38,7 @@
 											<label for="description" class="col-md-3 control-label">{{ trans('message.description')}}<span class='require'>*</span></label>
 											<div class="col-md-9">
 											<div class="input-icon"><i class="fa fa-user"></i>
-											{{ Form::textarea('description', $newsDetails['description'], array('class' => 'form-control','placeholder'=> trans('message.description'),'required'=>true,'type'=>'email')) }}
+											{{ Form::textarea('description', $testimonialDetails['description'], array('class' => 'form-control','placeholder'=> trans('message.description'),'required'=>true,'type'=>'email')) }}
 											<span class="text-danger">{{ $errors->first('description') }}</span>
 											</div>
 											</div>
@@ -47,7 +47,7 @@
 											<label for="writtenby" class="col-md-3 control-label">{{ trans('message.writtenby')}}<span class='require'>*</span></label>
 											<div class="col-md-9">
 											<div class="input-icon"><i class="fa fa-user"></i>
-											{{ Form::text('written_by', $newsDetails['written_by'], array('class' => 'form-control','placeholder'=> trans('message.writtenby'),'required'=>true)) }}
+											{{ Form::text('written_by', $testimonialDetails['written_by'], array('class' => 'form-control','placeholder'=> trans('message.writtenby'),'required'=>true)) }}
 											<span class="text-danger">{{ $errors->first('written_by')}}</span>
 											</div>
 											</div>
@@ -65,10 +65,10 @@
 											<div style="margin-bottom: 70px;">
 														<label for="name" class="col-md-3 control-label">{{ trans('message.existingimagename')}}</label>
 														<div class="col-md-9">
-																	<?php	if($newsDetails['imagename']==''){
+																	<?php	if($testimonialDetails['imagename']==''){
 																	$imagename= 'default.jpg';
-																	}elseif(file_exists('public/storage/'.$newsDetails['imagename'])){
-																	$imagename= $newsDetails['imagename'];
+																	}elseif(file_exists('public/storage/'.$testimonialDetails['imagename'])){
+																	$imagename= $testimonialDetails['imagename'];
 																	}else{
 																	$imagename= 'default.jpg';
 																	}

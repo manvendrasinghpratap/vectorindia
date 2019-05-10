@@ -52,8 +52,8 @@
                                        <td>{{ @$row->written_by }}</td>
                                        <td>{{ @$row->created_at }}</td>
                                        <td>
-                                          <a class="btn btn-default btn-xs edit" href="{{ URL::to('editLatestnews',[encodeParam($row->id) ])}}" title="Edit News"> <i class="fa fa-edit"></i></a>
-                                          <button type="button" class="btn btn-default btn-xs confirmDelete" data-siteurl ="{{ url('/')}}" data-tablename="news" data-record-id="{{ $row->id }}" data-record-title="Are you sure you want to delete this Main Skill ?" data-toggle="modal" data-target="modal-confirm" data-succuss="Main Skill deleted successfully">
+                                          <a class="btn btn-default btn-xs edit" href="{{ URL::to('edittestimonials',[encodeParam($row->id) ])}}" title="Edit News"> <i class="fa fa-edit"></i></a>
+                                          <button type="button" class="btn btn-default btn-xs confirmDelete" data-siteurl ="{{ url('/')}}" data-tablename="testimonials" data-record-id="{{ $row->id }}" data-record-title="Are you sure you want to delete this testimonial ?" data-toggle="modal" data-target="modal-confirm" data-succuss="Testimonial deleted successfully">
                                              <i class="fa fa-trash-o "></i>
                                           </button>
                                        </td>

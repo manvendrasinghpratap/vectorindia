@@ -13,7 +13,7 @@ class TestimonialRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,21 @@ class TestimonialRequest extends FormRequest
      *
      * @return array
      */
+    public function messages()
+    {
+        return [
+            'heading.required'          => 'Heading is required',
+            'description.required'      => 'Description is required',
+            'written_by.required'        => 'Written By is required',
+        ];
+    }
+
     public function rules()
     {
         return [
-            //
-        ];
+            'heading'                   => 'required',
+            'description'               => 'required',
+            'written_by'                 => 'required',
+       ];
     }
 }

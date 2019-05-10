@@ -111,7 +111,8 @@ class LatestNewsController extends Controller
      */
     public function update(Request $request)
     {
-        $this->p($request->all(),1);
+        //$this->p($request->all(),1);
+        $id = $request->id;
         if(!empty($id)) {
             $file_path = storage_path('app/public/'.$request->imagename);
             $imagename = $request->file('imagename');
@@ -128,7 +129,7 @@ class LatestNewsController extends Controller
         $newDetails->written_by         =   $request->written_by;
         $newDetails->sub_heading        =   $request->sub_heading;
 
-        if(isset($cover) && !empty($cover))
+        if(isset($imagename) && !empty($imagename))
     		    $newDetails->imagename  =   $imagename->getFilename().'.'.$extension;
 
         $newDetails->save();
