@@ -18,7 +18,7 @@ class TestimonialController extends Controller
      protected $listing = array('/addnewtestimonials'=>'Add New Testimonial');
      public function __construct()
      {
-         $this->middleware('auth');
+         $this->middleware('auth'); 
      }
 
     /**

@@ -71,7 +71,13 @@ Route::get('/edittestimonials/{id}','TestimonialController@edit')->name('edittes
 Route::post('/updatetestimonials','TestimonialController@update')->name('updatetestimonials');
 /* Testimonial Ends */
 
-
+/* Testimonial Begin */
+Route::get('/sponsors','SponsorController@index')->name('sponsors');
+Route::get('/addnewsponsor','SponsorController@create')->name('addnewsponsor');
+Route::post('/storesponsor','SponsorController@store')->name('storesponsor');
+Route::get('/editsponsor/{id}','SponsorController@edit')->name('editsponsor');
+Route::post('/updatesponsor','SponsorController@update')->name('updatesponsor');
+/* Testimonial Ends */
 
 
 
