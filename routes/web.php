@@ -55,9 +55,8 @@ Route::get('/single/{type}/{id}','MainWebsiteController@single')->name('single')
 /* Banner Begin */
 
 Route::get('/banners','BannerController@index')->name('banners');
-Route::get('/addnewBanner','BannerController@create')->name('addnewBanner');
+Route::get('/addnewbanner','BannerController@create')->name('addnewbanner');
 Route::post('/storenewBanner','BannerController@store')->name('storenewBanner');
-
 Route::get('/editBanner/{id}','BannerController@edit')->name('editBanner');
 Route::post('/updateBanner','BannerController@update')->name('updateBanner');
 

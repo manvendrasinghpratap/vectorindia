@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use App\Testimonial;
+use App\Banner;
+
 class MainWebsiteController extends Controller
 {
     /**
@@ -20,9 +22,12 @@ class MainWebsiteController extends Controller
         $smallNews = $collection->all();
         /*Testimonail Begin*/
         $testimonials   = Testimonial:: get();
+        $banner         = Banner:: get();
+        //$this->p($banner,0);
         /*Testimonail Begin*/
         return view('frontend.welcome')->with('mainNews',$mainNews)
                                         ->with('smallNews',$smallNews)
+                                        ->with('banner',$banner)
                                         ->with('testimonials',$testimonials);    
     }
 
@@ -36,11 +41,13 @@ class MainWebsiteController extends Controller
             case 'testimonial':
                 $singlePostDetails = Testimonial::find($newsId);
                 break;
+            case 'banner':
+                $singlePostDetails = Banner::find($newsId);
+                break;    
             default:
                 # code...
                 break;
         }
-      //$this->p($postDetails,1);
       return view('frontend.newdetail')->with('singlePostDetails',$singlePostDetails)
                                         ->with('posttype',$posttype);
     }

@@ -54,7 +54,7 @@ class TestimonialController extends Controller
     public function store(TestimonialRequest $request)
     {
         //
-        $this->p($request->all(),0);
+        //$this->p($request->all(),0);
         $imagename = $request->file('imagename');
         if($request->file('imagename')){
             $extension = $imagename->getClientOriginalExtension();

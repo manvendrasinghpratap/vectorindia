@@ -5,11 +5,16 @@
             <div class="col-12">
               <div class="headbar-container">
                 <div class="headbar-content"><span class="headbar-text"><?php echo e(@$settings['haveanyquestion']); ?></span><a class="headbar-mail-link" href="mailto:<?php echo e(@$settings['email']); ?>"><?php echo e(@$settings['email']); ?></a></div><span class="headbar-text"><?php echo e(@$settings['bestprofessionalsolutionsforyourcompany']); ?></span>
-                <div class="app-social-links-wrapper"><a class="app-social-link" href="skype:<?php echo e(@$settings['skype']); ?>?call"><i class="fab fa-skype"></i></a><a class="app-social-link" href="<?php echo e(@$settings['facebook']); ?>"><i class="fab fa-facebook-f"></i></a><a class="app-social-link" href="<?php echo e(@$settings['googleplus']); ?>"><i class="fab fa-google-plus-g"></i></a><a class="app-social-link" href="<?php echo e(@$settings['twitter']); ?>"><i class="fab fa-twitter"></i></a><a class="app-social-link" href="<?php echo e(@$settings['vimeo']); ?>"><i class="fab fa-vimeo-v"></i></a><a class="app-social-link" href="<?php echo e(@$settings['youtube']); ?>"><i class="fab fa-youtube"></i></a>
+                <div class="app-social-links-wrapper">
+                  <a class="app-social-link" href="skype:<?php echo e(@$settings['skype']); ?>?call"><i class="fab fa-skype"></i></a><a class="app-social-link" href="<?php echo e(@$settings['facebook']); ?>"><i class="fab fa-facebook-f"></i></a>
+                  <a class="app-social-link" href="<?php echo e(@$settings['googleplus']); ?>"><i class="fab fa-google-plus-g"></i></a>
+                  <a class="app-social-link" href="<?php echo e(@$settings['twitter']); ?>"><i class="fab fa-twitter"></i></a>
+                  <a class="app-social-link" href="<?php echo e(@$settings['vimeo']); ?>"><i class="fab fa-vimeo-v"></i></a>
+                  <a class="app-social-link" href="<?php echo e(@$settings['youtube']); ?>"><i class="fab fa-youtube"></i></a>
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
       <nav class="app-navbar app-navbar--sticky">
@@ -21,7 +26,7 @@
                 <ul class="app-navbar-ul">
                   <li class="app-navbar-ul-link active has-child has-mega-menu active"><a class="app-navbar-ul-link-a"
                       href="<?php echo e(url('/')); ?>">HOME</a>
-                    <div class="app-navbar-dropdown">
+                    <div class="app-navbar-dropdown" style="display: none;">
                       <div class="row">
                         <div class="col-lg-3">
                           <a href="index-2.html">Default</a>
@@ -47,10 +52,10 @@
                       </div>
                     </div>
                   </li>
-                  <li class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">ABOUT US</a>
+                  <li style="display: none;" class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">ABOUT US</a>
                     <div class="app-navbar-dropdown"><a href="about-us.html">About Us</a><a href="about-us-two.html">About Us Two</a><a href="about-us-three.html">About Us Three</a><a href="about-us-four.html">About Us Four</a><a href="about-us-five.html">About Us Five</a><a href="about-us-six.html">About Us Six</a></div>
                   </li>
-                  <li class="app-navbar-ul-link has-child has-mega-menu"><a href="#" class="app-navbar-ul-link-a">SERVICES</a>
+                  <li style="display: none;" class="app-navbar-ul-link has-child has-mega-menu"><a href="#" class="app-navbar-ul-link-a">SERVICES</a>
                     <div class="app-navbar-dropdown">
                       <div class="row">
                         <div class="col-lg-3">
@@ -78,19 +83,19 @@
                       </div>
                     </div>
                   </li>
-                  <li class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">TEAM</a>
+                  <li style="display: none;" class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">TEAM</a>
                     <div class="app-navbar-dropdown"><a href="team-members.html">Team Members</a><a
                         href="team-members-left.html">Team Members Left Aside</a><a href="team-members-right.html">Team Members
                         Right Aside</a></div>
                   </li>
-                  <li class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">PRICING</a>
+                  <li style="display: none;" class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">PRICING</a>
                     <div class="app-navbar-dropdown"><a href="pricing-table-one.html">Pricing Table One</a><a
                         href="pricing-table-one-left.html">Pricing Table One Left Aside</a><a href="pricing-table-one-right.html">Pricing
                         Table One Right Aside</a><a href="pricing-table-two.html">Pricing Table Two</a><a
                         href="pricing-table-two-left.html">Pricing Table Two Left Aside</a><a href="pricing-table-two-right.html">Pricing
                         Table Two Right Aside</a></div>
                   </li>
-                  <li class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">BLOG</a>
+                  <li style="display: none;" class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">BLOG</a>
                     <div class="app-navbar-dropdown"><a href="blog-details.html">Blog Details Full</a><a
                         href="blog-details-left.html">Blog Details Left Aside</a><a href="blog-details-right.html">Blog Details
                         Right Aside</a><a href="blog-list-one.html">Blog List One Full</a><a href="blog-list-one-left.html">Blog
@@ -98,14 +103,14 @@
                         href="blog-list-two.html">Blog List Two Full</a><a href="blog-list-two-left.html">Blog List Two Left
                         Aside</a><a href="blog-list-two-right.html">Blog List Two Right Aside</a></div>
                   </li>
-                  <li class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">PORTFOLIO</a>
+                  <li style="display: none;" class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">PORTFOLIO</a>
                     <div class="app-navbar-dropdown"><a href="portfolio-details.html">Portfolio Details Full</a><a
                         href="portfolio-details-left.html">Portfolio Details Left Aside</a><a
                         href="portfolio-details-right.html">Portfolio Details Right Aside</a><a
                         href="portfolio-list-one.html">Portfolio List One</a><a href="portfolio-list-two.html">Portfolio List Two
                         </a><a href="portfolio-list-three.html">Portfolio List Three</a><a href="portfolio-list-lightbox.html">Portfolio List Lightbox</a></div>
                   </li>
-                  <li class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">OTHER</a>
+                  <li style="display: none;" class="app-navbar-ul-link has-child"><a href="#" class="app-navbar-ul-link-a">OTHER</a>
                     <div class="app-navbar-dropdown"><a href="faq.html">FAQ Full</a><a href="faq-left.html">FAQ Left Aside</a><a
                         href="faq-right.html">FAQ Right Aside</a><a href="design-guide.html">Design Guide Full</a><a
                         href="design-guide-left.html">Design Guide Left Aside</a><a href="design-guide-right.html">Design Guide
